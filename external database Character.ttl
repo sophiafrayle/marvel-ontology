@@ -1,0 +1,1349 @@
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix marvel: <http://example.com/marvel_ontology#> .
+
+
+
+[ rdf:type owl:Ontology
+ ] .
+
+ #################################################################
+ #    Object Properties
+ #################################################################
+
+###  http://example.com/marvel_ontology#/hasCitizenship
+marvel:hasCitizenship rdf:type owl:ObjectProperty .
+
+###  http://example.com/marvel_ontology#/isSpecies
+marvel:isSpecies rdf:type owl:ObjectProperty .
+
+###  http://example.com/marvel_ontology#/isPortrayedBy
+marvel:isPortrayedBy rdf:type owl:ObjectProperty .
+
+###  http://example.com/marvel_ontology#/playsARoleIn
+marvel:playsARoleIn rdf:type owl:ObjectProperty .
+
+
+ #################################################################
+ #    Data properties
+ #################################################################
+
+
+###  http://example.com/marvel_ontology#/hasGender
+marvel:hasGender rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#/Character
+marvel:Character rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#/hasStatus
+marvel:hasStatus rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#/Affiliation
+marvel:Affiliation rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#/Rank
+marvel:Rank rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#/realName
+marvel:realName rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+
+###  http://example.com/marvel_ontology#/Citizenship
+marvel:Citizenship rdf:type owl:Class .
+
+
+###  http://example.com/marvel_ontology#/Hero
+marvel:Hero rdf:type owl:Class .
+
+
+###  http://example.com/marvel_ontology#/Villain
+marvel:Villain rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.com/marvel_ontology#/A_Getaway_Guy
+marvel:A_Getaway_Guy rdf:type owl:NamedIndividual ,
+                              marvel:Hero ;
+
+                     marvel:hasCitizenship marvel:American ;
+                     marvel:hasStatus "Alive" ;
+                     marvel:Affiliation "X-Con Security Consultants" ;
+                     marvel:realName "Dave" ;
+                     marvel:isSpecies marvel:human ;
+                     marvel:Character "A Getaway Guy" ;
+                     marvel:hasGender "Male" ;
+                     marvel:playsARoleIn marvel:AntMan,
+                                    marvel:AntManAndTheWasp .
+
+
+###  http://example.com/marvel_ontology#/Agent_13
+marvel:Agent_13 rdf:type owl:NamedIndividual ,
+                         marvel:Hero ;
+
+                marvel:hasCitizenship marvel:American ;
+                marvel:hasStatus "Alive" ;
+                marvel:Affiliation "S.H.I.E.L.D. (formerly) CIA*Joint Counter Terrorist Centre" ;
+                marvel:isPortrayedBy marvel:Emily_Van_Camp ;
+                marvel:Rank "CIA Agent, Agent of S.H.I.E.L.D. (formerly)" ;
+                marvel:realName "Sharon Carter" ;
+                marvel:isSpecies marvel:human ;
+                marvel:Character "Agent 13" ;
+                marvel:hasGender "Female" ;
+                marvel:playsARoleIn marvel:CaptainAmericaTheWinterSoldier,
+                                    marvel:CaptainAmericaCivilWar,
+                                   marvel:AvengersEndgame .
+
+
+###  http://example.com/marvel_ontology#/Ant_Man
+marvel:Ant_Man rdf:type owl:NamedIndividual ,
+                       marvel:Hero ;
+              marvel:hasCitizenship marvel:American ;
+              marvel:hasStatus "Alive" ;
+              marvel:Affiliation "Vistacorp (formerly) Baskin-Robbins (formerly)X-Con Security Consultants Avengers (formerly)" ;
+              marvel:isPortrayedBy marvel:Paul_Rudd ;
+              marvel:realName "Scott Edward Harris Lang" ;
+              marvel:isSpecies marvel:human ;
+              marvel:Character "Ant-man" ;
+              marvel:playsARoleIn marvel:AntMan,
+                                  marvel:CaptainAmericaCivilWar,
+                                  marvel:SpiderManHomecoming,
+                                  marvel:AvengersInfinityWar,
+                                  marvel:AntManAndTheWasp,
+                                  marvel:AvengersEndgame,
+                                  marvel:SpiderManFarFromHome .
+
+
+###  http://example.com/marvel_ontology#/Baby_Groot
+marvel:Baby_Groot rdf:type owl:NamedIndividual ,
+                           marvel:Hero ;
+
+                  marvel:hasStatus "Alive" ;
+                  marvel:Affiliation "Guardians of the Galaxy" ;
+                  marvel:isPortrayedBy marvel:Krystian_Godlewski ;
+                  marvel:realName "Groot" ;
+                  marvel:isSpecies  marvel:Flora_colossus ;
+                  marvel:Character "Baby Groot" ;
+                  marvel:hasGender "Male" ;
+                  marvel:playsARoleIn marvel:GuardiansOfTheGalaxy,
+                                      marvel:GuardiansOfTheGalaxyVol2,
+                                      marvel:AvengersInfinityWar,
+                                     marvel:AvengersEndgame .
+
+
+
+
+
+###  http://example.com/marvel_ontology#/Black_Panther
+marvel:Black_Panther rdf:type owl:NamedIndividual ,
+                              marvel:Hero ;
+
+                     marvel:hasCitizenship marvel:Wakandan ;
+                     marvel:hasStatus "Alive" ;
+                     marvel:Affiliation "Golden TribeTribal Council" ;
+                     marvel:isPortrayedBy marvel:Chadwick_Boseman ;
+                     marvel:Rank "Prince of Wakanda (formerly)Black Panther, King of Wakanda" ;
+                     marvel:realName "T'Challa" ;
+                     marvel:isSpecies marvel:human ;
+                     marvel:Character "Black Panther" ;
+                     marvel:hasGender "Male" ;
+                     marvel:playsARoleIn marvel:CaptainAmericaCivilWar,
+                                         marvel:SpiderManHomecoming,
+                                         marvel:BlackPanther,
+                                         marvel:AvengersInfinityWar,
+                                         marvel:AvengersEndgame,
+                                         marvel:SpiderManFarFromHome .
+
+
+###  http://example.com/marvel_ontology#/Black_Widow
+marvel:Black_Widow rdf:type owl:NamedIndividual ,
+                            marvel:Hero ;
+
+                   marvel:hasCitizenship marvel:Russian ;
+                   marvel:hasStatus "Deceased" ;
+                   marvel:Affiliation "Red Room (formerly) KGB (formerly) S.H.I.E.L.D. (formerly)* STRIKE Team: Delta (formerly) Hammer Industries (formerly; undercover) Stark Industries (formerly, undercover) Avengers" ;
+                   marvel:isPortrayedBy marvel:Scarlett_Johansson ;
+                   marvel:Rank "Agent of S.H.I.E.L.D. (formerly)" ;
+                   marvel:realName "Natalia Alianovna Romanoff[1]" ;
+                   marvel:isSpecies marvel:human ;
+                   marvel:Character "Black Widow" ;
+                   marvel:hasGender "Female" ;
+                   marvel:playsARoleIn marvel:IronMan2,
+                                       marvel:TheAvengers,
+                                       marvel:CaptainAmericaTheWinterSoldier,
+                                       marvel:AvengersAgeofUltron,
+                                       marvel:CaptainAmericaCivilWar,
+                                       marvel:SpiderManHomecoming,
+                                       marvel:ThorRagnarok,
+                                       marvel:AvengersInfinityWar,
+                                       marvel:CaptainMarvel,
+                                       marvel:AvengersEndgame,
+                                       marvel:SpiderManFarFromHome,
+                                       marvel:BlackWidow .
+
+
+
+
+
+###  http://example.com/marvel_ontology#/Captain_America
+marvel:Captain_America rdf:type owl:NamedIndividual ,
+                                marvel:Hero ;
+
+                       marvel:hasCitizenship marvel:American ;
+                       marvel:hasStatus "Alive" ;
+                       marvel:Affiliation "United States Army (formerly) United Service Organizations (formerly) United States Department of the Treasury (formerly) SSR (formerly) Howling Commandos (formerly) S.H.I.E.L.D. (formerly) Avengers (formerly)" ;
+                       marvel:isPortrayedBy marvel:Chris_Evans ;
+                       marvel:Rank "Captain (formerly)Agent of S.H.I.E.L.D. (formerly)" ;
+                       marvel:realName "Steven Grant Rogers" ;
+                       marvel:isSpecies marvel:human ;
+                       marvel:Character "Captain America" ;
+                       marvel:hasGender "Male" ;
+                       marvel:playsARoleIn marvel:IronMan2,
+                                           marvel:CaptainAmericaTheFirstAvenger,
+                                           marvel:TheAvengers,
+                                           marvel:IronMan3,
+                                           marvel:ThorTheDarkWorld,
+                                           marvel:CaptainAmericaTheWinterSoldier,
+                                           marvel:AvengersAgeofUltron,
+                                           marvel:AntMan,
+                                           marvel:CaptainAmericaCivilWar,
+                                           marvel:SpiderManHomecoming,
+                                           marvel:AvengersInfinityWar,
+                                           marvel:AntManAndTheWasp,
+                                           marvel:CaptainMarvel,
+                                           marvel:AvengersEndgame,
+                                           marvel:SpiderManFarFromHome .
+
+
+###  http://example.com/marvel_ontology#/Captain_Marvel
+marvel:Captain_Marvel rdf:type owl:NamedIndividual ,
+                               marvel:Hero ;
+
+                      marvel:hasCitizenship marvel:American ;
+                      marvel:hasStatus "Alive" ;
+                      marvel:Affiliation "United States Air Force (formerly)Starforce (formerly) Avengers (formerly)" ;
+                      marvel:isPortrayedBy marvel:Brie_Larson ;
+                      marvel:Rank "Captain (formerly)" ;
+                      marvel:realName "Carol Danvers" ;
+                      marvel:isSpecies marvel:Human ;
+                      marvel:Character "Captain Marvel" ;
+                      marvel:hasGender "Female" ;
+                      marvel:playsARoleIn marvel:CaptainMarvel,
+                                          marvel:AvengersEndgame,
+                                          marvel:SpiderManFarFromHome,
+                                          marvel:CaptainMarvel2 .
+
+
+###  http://example.com/marvel_ontology#/Chickadee
+marvel:Chickadee rdf:type owl:NamedIndividual ,
+                          marvel:Hero ;
+
+                 marvel:hasCitizenship marvel:Wakandan ;
+                 marvel:hasStatus "Alive" ;
+                 marvel:Affiliation "Border Tribe Dora Milaje Avengers (formerly)" ;
+                 marvel:isPortrayedBy marvel:Danai_Gurira ;
+                 marvel:Rank "General" ;
+                 marvel:realName "Okoye" ;
+                 marvel:Character "Chickadee" ;
+                 marvel:hasGender "Female" ;
+                 marvel:playsARoleIn marvel:BlackPanther,
+                                     marvel:AvengersInfinityWar,
+                                     marvel:AvengersEndgame,
+                                     marvel:BlackPanther2 .
+
+
+###  http://example.com/marvel_ontology#/Crossbones
+marvel:Crossbones rdf:type owl:NamedIndividual ,
+                           marvel:Villain ;
+
+                  marvel:hasCitizenship marvel:American ;
+                  marvel:hasStatus "Deceased" ;
+                  marvel:Affiliation "HYDRA (formerly) S.H.I.E.L.D. (formerly, undercover)* STRIKE (formerly, undercover)" ;
+                  marvel:isPortrayedBy marvel:FRank_Grillo ;
+                  marvel:Rank "Agent of S.H.I.E.L.D. (formerly)STRIKE Commander (formerly)" ;
+                  marvel:realName "Brock Rumlow" ;
+                  marvel:isSpecies marvel:human ;
+                  marvel:Character "Crossbones" ;
+                  marvel:hasGender "Male" ;
+                  marvel:playsARoleIn marvel:CaptainAmericaTheWinterSoldier,
+                                      marvel:CaptainAmericaCivilWar,
+                                      marvel:AvengersEndgame .
+
+
+###  http://example.com/marvel_ontology#/Daddy_Three_Wombats
+marvel:Daddy_Three_Wombats rdf:type owl:NamedIndividual ,
+                                    marvel:Hero ;
+
+                           marvel:hasCitizenship marvel:American ;
+                           marvel:hasStatus "Alive" ;
+                           marvel:Affiliation "X-Con Security Consultants" ;
+                           marvel:isPortrayedBy marvel:Michael_Peña ;
+                           marvel:realName "Luis" ;
+                           marvel:isSpecies marvel:human ;
+                           marvel:Character "Daddy Three Wombats" ;
+                           marvel:hasGender "Male" ;
+                           marvel:playsARoleIn marvel:AntMan,
+                                               marvel:AntManAndTheWasp .
+
+
+
+
+
+###  http://example.com/marvel_ontology#/Daughter_Of_Thanos
+marvel:Daughter_Of_Thanos rdf:type owl:NamedIndividual ,
+                                   marvel:Hero ;
+
+
+                          marvel:hasStatus "Alive (original self)Deceased (time-traveled self from 2014)" ;
+                          marvel:Affiliation "Guardians of the Galaxy Avengers (formerly)" ;
+                          marvel:isPortrayedBy marvel:Karen_Gillan ;
+                          marvel:realName "Nebula" ;
+                          marvel:isSpecies marvel:cyborg ;
+                          marvel:Character "Daughter Of Thanos" ;
+                          marvel:hasGender "Female" ;
+                          marvel:playsARoleIn marvel:GuardiansOfTheGalaxy,
+                                              marvel:GuardiansOfTheGalaxyVol2,
+                                              marvel:AvengersInfinityWar,
+                                              marvel:AvengersEndgame,
+                                              marvel:GuardiansOfTheGalaxyVol3 .
+
+
+###  http://example.com/marvel_ontology#/Doctor
+marvel:Doctor rdf:type owl:NamedIndividual ,
+                       marvel:Villain ;
+
+              marvel:hasCitizenship marvel:Sokovian ;
+              marvel:hasStatus "In Custody" ;
+              marvel:Affiliation "Sokovian Armed Forces (formerly)*EKO Scorpion (formerly)" ;
+              marvel:isPortrayedBy marvel:Daniel_Brühl ;
+              marvel:Rank "Colonel (formerly)" ;
+              marvel:realName "Helmut Zemo" ;
+              marvel:isSpecies marvel:human ;
+              marvel:Character "Doctor" ;
+              marvel:hasGender "Male" ;
+              marvel:playsARoleIn marvel:CaptainAmericaCivilWar,
+                                  marvel:BlackPanther .
+
+
+###  http://example.com/marvel_ontology#/Doctor_Strange
+marvel:Doctor_Strange rdf:type owl:NamedIndividual ,
+                               marvel:Hero ;
+
+                      marvel:hasCitizenship marvel:American ;
+                      marvel:hasStatus "Alive" ;
+                      marvel:Affiliation "Metro-General Hospital (formerly) Masters of the Mystic Arts" ;
+                      marvel:isPortrayedBy marvel:Benedict_Cumberbatch ;
+                      marvel:Rank "Doctor, Master of the New York Sanctum" ;
+                      marvel:realName "Stephen Vincent Strange" ;
+                      marvel:isSpecies marvel:human ;
+                      marvel:Character "Doctor Strange" ;
+                      marvel:hasGender "Male" ;
+                      marvel:playsARoleIn marvel:CaptainAmericaTheWinterSoldier,
+                                          marvel:DoctorStrange,
+                                          marvel:ThorRagnarok,
+                                          marvel:AvengersInfinityWar,
+                                          marvel:AvengersEndgame,
+                                          marvel:SpiderManFarFromHome,
+                                          marvel:DoctorStrangeintheMultiverseofMadness .
+
+
+###  http://example.com/marvel_ontology#/Drax_The_Destroyer
+marvel:Drax_The_Destroyer rdf:type owl:NamedIndividual ,
+                                   marvel:Hero ;
+
+
+                          marvel:hasStatus "Alive" ;
+                          marvel:Affiliation "Guardians of the Galaxy" ;
+                          marvel:isPortrayedBy marvel:Dave_Bautista ;
+                          marvel:realName "Drax" ;
+                          marvel:Character "Drax The Destroyer" ;
+                          marvel:hasGender "Male" ;
+                          marvel:playsARoleIn marvel:GuardiansOfTheGalaxy,
+                                              marvel:GuardiansOfTheGalaxyVol2,
+                                              marvel:AvengersInfinityWar,
+                                              marvel:AvengersEndgame,
+                                              marvel:GuardiansOfTheGalaxyVol3.
+
+
+###  http://example.com/marvel_ontology#/Dum_Dum_Dugan
+marvel:Dum_Dum_Dugan rdf:type owl:NamedIndividual ,
+                              marvel:Hero ;
+
+                     marvel:hasCitizenship marvel:American ;
+                     marvel:hasStatus "Unknown" ;
+                     marvel:Affiliation "United States Army*69th Infantry Regiment (formerly) Howling Commandos (formerly)" ;
+                     marvel:isPortrayedBy marvel:Neal_McDonough ;
+                     marvel:Rank "Sergeant" ;
+                     marvel:realName "Timothy Aloysius Cadwallader Dugan" ;
+                     marvel:isSpecies marvel:human ;
+                     marvel:Character "Dum Dum Dugan" ;
+                     marvel:hasGender "Male" ;
+                     marvel:playsARoleIn marvel:CaptainAmericaTheFirstAvenger,
+                                         marvel:TheAvengers,
+                                         marvel:CaptainAmericaTheWinterSoldier,
+                                         marvel:SpiderManHomecoming .
+
+
+###  http://example.com/marvel_ontology#/Falcon
+marvel:Falcon rdf:type owl:NamedIndividual ,
+                       marvel:Hero ;
+
+              marvel:hasCitizenship marvel:American ;
+              marvel:hasStatus "Alive" ;
+              marvel:Affiliation "United States Air Force (formerly)* Air National Guard (formerly)United States Department of Veterans Affairs (formerly) Avengers (formerly)" ;
+              marvel:isPortrayedBy marvel:Anthony_Mackie ;
+              marvel:realName "Samuel Thomas Wilson" ;
+              marvel:isSpecies marvel:human ;
+              marvel:Character "Falcon" ;
+              marvel:hasGender "Male" ;
+              marvel:playsARoleIn marvel:CaptainAmericaTheWinterSoldier,
+                                  marvel:AvengersAgeofUltron,
+                                  marvel:AntMan,
+                                  marvel:CaptainAmericaCivilWar,
+                                  marvel:AvengersInfinityWar,
+                                  marvel:AvengersEndgame,
+                                  marvel:SpiderManFarFromHome .
+
+
+
+
+
+###  http://example.com/marvel_ontology#/Gabe_Jones
+marvel:Gabe_Jones rdf:type owl:NamedIndividual ,
+                           marvel:Hero ;
+
+                  marvel:hasCitizenship marvel:American ;
+                  marvel:hasStatus "Unknown" ;
+                  marvel:Affiliation "United States Army92nd Infantry Division (formerly) Howling Commandos" ;
+                  marvel:isPortrayedBy marvel:Derek_Luke ;
+                  marvel:Rank "Private" ;
+                  marvel:realName "Gabriel Jones" ;
+                  marvel:isSpecies marvel:human ;
+                  marvel:Character "Gabe Jones" ;
+                  marvel:hasGender "Male" ;
+                  marvel:playsARoleIn marvel:CaptainAmericaTheFirstAvenger,
+                                      marvel:CaptainAmericaTheWinterSoldier,
+                                      marvel:SpiderManHomecoming .
+
+
+###  http://example.com/marvel_ontology#/Gatekeeper
+marvel:Gatekeeper rdf:type owl:NamedIndividual ,
+                           marvel:Hero ;
+
+                  marvel:hasCitizenship marvel:Asgardian ;
+                  marvel:hasStatus "Deceased" ;
+                  marvel:isPortrayedBy marvel:Idris_Elba ;
+                  marvel:Rank "Gatekeeper of Asgard (formerly)Guardian of the Bifrost Bridge (formerly)" ;
+                  marvel:realName "Heimdall" ;
+                  marvel:isSpecies marvel:Asgardian ;
+                  marvel:Character "Gatekeeper" ;
+                  marvel:hasGender "Male" ;
+                  marvel:playsARoleIn marvel:Thor_Movie,
+                                      marvel:ThorTheDarkWorld,
+                                      marvel:AvengersAgeofUltron,
+                                      marvel:ThorRagnarok,
+                                      marvel:AvengersInfinityWar .
+
+
+
+
+
+
+
+
+###  http://example.com/marvel_ontology#/Goddess_Of_Death
+marvel:Goddess_Of_Death rdf:type owl:NamedIndividual ,
+                                 marvel:Villain ;
+
+                        marvel:hasCitizenship marvel:Asgardian ;
+                        marvel:hasStatus "Deceased" ;
+                        marvel:Affiliation "Asgardian Royal Family (formerly)Berserkers" ;
+                        marvel:isPortrayedBy marvel:Cate_Blanchett ;
+                        marvel:Rank "Goddess of Death, Princess of Asgard (formerly)Chief of the Legion of Asgard (formerly)Executioner of Asgard (formerly)Queen of Asgard (formerly)" ;
+                        marvel:realName "Hela Odinsdottir" ;
+                        marvel:isSpecies marvel:Asgardian ;
+                        marvel:Character "Goddess Of Death" ;
+                        marvel:hasGender "Female" ;
+                        marvel:playsARoleIn marvel:ThorRagnarok,
+                                            marvel:AvengersInfinityWar .
+
+
+###  http://example.com/marvel_ontology#/Great_Gorilla
+marvel:Great_Gorilla rdf:type owl:NamedIndividual ,
+                              marvel:Hero ;
+
+                     marvel:hasCitizenship marvel:Wakandan ;
+                     marvel:hasStatus "Alive" ;
+                     marvel:Affiliation "Jabari TribeTribal Council" ;
+                     marvel:isPortrayedBy marvel:Winston_Duke ;
+                     marvel:Rank "Leader of the Jabari Tribe, Lord" ;
+                     marvel:realName "M'Baku" ;
+                     marvel:isSpecies marvel:human ;
+                     marvel:Character "Great Gorilla" ;
+                     marvel:hasGender "Male" ;
+                     marvel:playsARoleIn marvel:BlackPanther,
+                                         marvel:AvengersInfinityWar,
+                                         marvel:AvengersEndgame .
+
+
+###  http://example.com/marvel_ontology#/Gross_Bug_Lady
+marvel:Gross_Bug_Lady rdf:type owl:NamedIndividual ,
+                               marvel:Hero ;
+
+
+                      marvel:hasStatus "Alive" ;
+                      marvel:Affiliation "Guardians of the Galaxy" ;
+                      marvel:isPortrayedBy marvel:PomKlementieff ;
+                      marvel:realName "Mantis" ;
+                      marvel:Character "Gross Bug Lady" ;
+                      marvel:hasGender "Female" ;
+                      marvel:playsARoleIn marvel:GuardiansOfTheGalaxyVol2,
+                                          marvel:AvengersInfinityWar,
+                                          marvel:AvengersEndgame,
+                                          marvel:GuardiansOfTheGalaxyVol3 .
+
+
+###  http://example.com/marvel_ontology#/Hank_Pym
+marvel:Hank_Pym rdf:type owl:NamedIndividual ,
+                         marvel:Hero ;
+
+                marvel:hasCitizenship marvel:American ;
+                marvel:hasStatus "Alive" ;
+                marvel:Affiliation "United States Army (formerly) S.H.I.E.L.D. (formerly)*Project G.O.L.I.A.T.H. (formerly) Pym Technologies (formerly)" ;
+                marvel:isPortrayedBy marvel:Michael_Douglas ;
+                marvel:Rank "Doctor, CEO of Pym Technologies (formerly)Consultant for S.H.I.E.L.D. (formerly)" ;
+                marvel:realName "Henry Jonathan Pym" ;
+                marvel:isSpecies marvel:human ;
+                marvel:Character "Hank Pym" ;
+                marvel:hasGender "Male" ;
+                marvel:playsARoleIn marvel:Thor_Movie,
+                                    marvel:AntMan,
+                                    marvel:CaptainAmericaCivilWar,
+                                    marvel:AntManAndTheWasp,
+                                    marvel:AvengersEndgame .
+
+
+###  http://example.com/marvel_ontology#/Hawkeye
+marvel:Hawkeye rdf:type owl:NamedIndividual ,
+                        marvel:Hero ;
+
+               marvel:hasCitizenship marvel:American ;
+               marvel:hasStatus "Alive" ;
+               marvel:Affiliation "S.H.I.E.L.D. (formerly)* STRIKE Team: Delta (formerly) Avengers (formerly)" ;
+               marvel:isPortrayedBy marvel:Jeremy_Renner ;
+               marvel:Rank "Agent of S.H.I.E.L.D. (formerly)" ;
+               marvel:realName "Clinton Francis Barton" ;
+               marvel:isSpecies marvel:human ;
+               marvel:Character "Hawkeye" ;
+               marvel:hasGender "Male" ;
+               marvel:playsARoleIn marvel:Thor_Movie,
+                                   marvel:TheAvengers,
+                                   marvel:AvengersAgeofUltron,
+                                   marvel:CaptainAmericaCivilWar,
+                                   marvel:SpiderManHomecoming,
+                                   marvel:AvengersInfinityWar,
+                                   marvel:AvengersEndgame,
+                                   marvel:SpiderManFarFromHome .
+
+
+###  http://example.com/marvel_ontology#/Hogun_The_Grim
+marvel:Hogun_The_Grim rdf:type owl:NamedIndividual ,
+                               marvel:Hero ;
+
+                      marvel:hasCitizenship marvel:Asgardian ;
+                      marvel:hasStatus "Deceased" ;
+                      marvel:Affiliation "Warriors Three" ;
+                      marvel:isPortrayedBy marvel:Tadanobu_Asano ;
+                      marvel:realName "Hogun" ;
+                      marvel:isSpecies marvel:Vanir ;
+                      marvel:Character "Hogun The Grim" ;
+                      marvel:hasGender "Male" ;
+                      marvel:playsARoleIn marvel:Thor_Movie,
+                                          marvel:ThorTheDarkWorld,
+                                          marvel:ThorRagnarok .
+
+
+
+
+
+###  http://example.com/marvel_ontology#/Iron_Man
+marvel:Iron_Man rdf:type owl:NamedIndividual ,
+                         marvel:Hero ;
+
+                marvel:hasCitizenship marvel:American ;
+                marvel:hasStatus "Deceased" ;
+                marvel:Affiliation "MIT (formerly) Stark Industries S.H.I.E.L.D. (formerly) Avengers Damage Control" ;
+                marvel:isPortrayedBy marvel:Robert_DowneyJr ;
+                marvel:Rank "CEO of Stark Industries (formerly)Consultant (formerly)" ;
+                marvel:realName "Anthony Edward Stark" ;
+                marvel:isSpecies marvel:human ;
+                marvel:Character "Iron Man" ;
+                marvel:hasGender "Male" ;
+                marvel:playsARoleIn marvel:IronMan,
+                                    marvel:TheIncredibleHulk,
+                                    marvel:IronMan2,
+                                    marvel:Thor_Movie,
+                                    marvel:TheAvengers,
+                                    marvel:IronMan3,
+                                    marvel:CaptainAmericaTheWinterSoldier,
+                                    marvel:AvengersAgeofUltron,
+                                    marvel:AntMan,
+                                    marvel:CaptainAmericaCivilWar,
+                                    marvel:GuardiansOfTheGalaxyVol2,
+                                    marvel:SpiderManHomecoming,
+                                    marvel:ThorRagnarok,
+                                    marvel:AvengersInfinityWar,
+                                    marvel:AvengersEndgame,
+                                    marvel:SpiderManFarFromHome .
+
+
+###  http://example.com/marvel_ontology#/Iron_Monger
+marvel:Iron_Monger rdf:type owl:NamedIndividual ,
+                            marvel:Villain ;
+
+                   marvel:hasCitizenship marvel:American ;
+                   marvel:hasStatus "Deceased" ;
+                   marvel:Affiliation "Stark Industries Ten Rings (formerly)" ;
+                   marvel:isPortrayedBy marvel:Jeff_Bridges ;
+                   marvel:realName "Obadiah Stane" ;
+                   marvel:isSpecies marvel:human ;
+                   marvel:Character "Iron Monger" ;
+                   marvel:hasGender "Male" ;
+                   marvel:playsARoleIn marvel:IronMan,
+                                       marvel:IronMan2,
+                                       marvel:IronMan3,
+                                       marvel:CaptainAmericaTheWinterSoldier,
+                                       marvel:SpiderManFarFromHome .
+
+
+
+
+
+###  http://example.com/marvel_ontology#/Jim_Morita
+marvel:Jim_Morita rdf:type owl:NamedIndividual ,
+                           marvel:Hero ;
+
+                  marvel:hasCitizenship marvel:American ;
+                  marvel:hasStatus "Deceased" ;
+                  marvel:Affiliation "United States Army (formerly) Howling Commandos" ;
+                  marvel:isPortrayedBy marvel:Kenneth_Choi ;
+                  marvel:Rank "Private" ;
+                  marvel:realName "James Morita" ;
+                  marvel:isSpecies marvel:human ;
+                  marvel:Character "Jim Morita" ;
+                  marvel:hasGender "Male" ;
+                  marvel:playsARoleIn marvel:CaptainAmericaTheFirstAvenger,
+                                      marvel:CaptainAmericaTheWinterSoldier,
+                                      marvel:SpiderManHomecoming .
+
+
+###  http://example.com/marvel_ontology#/Killmonger
+marvel:Killmonger rdf:type owl:NamedIndividual ,
+                           marvel:Villain ;
+
+                  marvel:hasCitizenship marvel:Wakandan ;
+                  marvel:hasStatus "Deceased" ;
+                  marvel:Affiliation "United States Naval Academy (formerly) MIT (formerly) United States Navy SEALs (formerly)Golden TribeTribal Council" ;
+                  marvel:isPortrayedBy marvel:Michael_B_Jordan ;
+                  marvel:Rank "King of Wakanda, Black Panther" ;
+                  marvel:realName "N'Jadaka (birth name)Erik Stevens (legal name)" ;
+                  marvel:isSpecies marvel:human ;
+                  marvel:Character "Killmonger" ;
+                  marvel:hasGender "Male" ;
+                  marvel:playsARoleIn marvel:BlackPanther .
+
+
+
+
+
+###  http://example.com/marvel_ontology#/Little_One
+marvel:Little_One rdf:type owl:NamedIndividual ,
+                           marvel:Hero ;
+
+
+                  marvel:hasStatus "Deceased (original self)Alive (alternate self from 2014)[4]" ;
+                  marvel:Affiliation "Guardians of the Galaxy (original self)" ;
+                  marvel:isPortrayedBy marvel:ZoeSaldana ;
+                  marvel:realName "Gamora" ;
+                  marvel:isSpecies marvel:cyborg ;
+                  marvel:Character "Little One" ;
+                  marvel:hasGender "Female" ;
+                  marvel:playsARoleIn marvel:GuardiansOfTheGalaxy,
+                                      marvel:GuardiansOfTheGalaxyVol2,
+                                      marvel:AvengersInfinityWar,
+                                      marvel:AvengersEndgame,
+                                      marvel:GuardiansOfTheGalaxyVol3 .
+
+
+###  http://example.com/marvel_ontology#/Loki
+marvel:Loki rdf:type owl:NamedIndividual ,
+                     marvel:Hero ;
+
+            marvel:hasCitizenship marvel:Asgardian ;
+            marvel:hasStatus "Deceased (original timeline)Alive (alternate timeline)" ;
+            marvel:Affiliation "Asgardian Royal FamilySakaaran Rebellion (formerly)" ;
+            marvel:isPortrayedBy marvel:Tom_Hiddleston ;
+            marvel:Rank "God of Mischief, Prince of Asgard (formerly)King of Asgard (formerly; twice)" ;
+            marvel:realName "Loki Laufeyson" ;
+            marvel:isSpecies marvel:Frost_Giant ;
+            marvel:Character "Loki" ;
+            marvel:hasGender "Male" ;
+            marvel:playsARoleIn marvel:Thor_Movie,
+                                marvel:TheAvengers,
+                                marvel:ThorTheDarkWorld,
+                                marvel:AvengersAgeofUltron,
+                                marvel:CaptainAmericaCivilWar,
+                                marvel:DoctorStrange,
+                                marvel:ThorRagnarok,
+                                marvel:AvengersInfinityWar,
+                                marvel:AvengersEndgame .
+
+
+
+
+
+###  http://example.com/marvel_ontology#/Maw
+marvel:Maw rdf:type owl:NamedIndividual ,
+                    marvel:Villain ;
+           marvel:hasStatus "Deceased" ;
+           marvel:Affiliation "Black Order" ;
+           marvel:isPortrayedBy marvel:Tom_VaughanLawlor ;
+           marvel:realName "Ebony Maw" ;
+           marvel:Character "Maw" ;
+           marvel:hasGender "Male" ;
+           marvel:playsARoleIn marvel:GuardiansOfTheGalaxy,
+                               marvel:AvengersInfinityWar,
+                               marvel:AvengersEndgame .
+
+
+
+
+
+###  http://example.com/marvel_ontology#/Mr._Secretary
+marvel:Mr._Secretary rdf:type owl:NamedIndividual ,
+                              marvel:Villain ;
+
+                     marvel:hasCitizenship marvel:American ;
+                     marvel:hasStatus "Deceased" ;
+                     marvel:Affiliation "United States Government (formerly) S.H.I.E.L.D. (formerly) HYDRAWorld Security Council (formerly)" ;
+                     marvel:isPortrayedBy marvel:Robert_Redford ;
+                     marvel:Rank "World Security Council Secretary, Undersecretary (formerly)" ;
+                     marvel:realName "Alexander Goodwin Pierce" ;
+                     marvel:isSpecies marvel:human ;
+                     marvel:Character "Mr. Secretary" ;
+                     marvel:hasGender "Male" ;
+                     marvel:playsARoleIn marvel:CaptainAmericaTheWinterSoldier,
+                                         marvel:AvengersEndgame .
+
+
+###  http://example.com/marvel_ontology#/Nick_Fury
+marvel:Nick_Fury rdf:type owl:NamedIndividual ,
+                          marvel:Hero ;
+
+                 marvel:hasCitizenship marvel:American ;
+                 marvel:hasStatus "Alive" ;
+                 marvel:Affiliation "United States Army (formerly) CIA (formerly) S.H.I.E.L.D. (formerly)Nick Fury's Crew" ;
+                 marvel:isPortrayedBy marvel:Samuel_LJackson ;
+                 marvel:Rank "Colonel (formerly)CIA Agent (formerly)Agent of S.H.I.E.L.D. (formerly)Director of S.H.I.E.L.D. (formerly)" ;
+                 marvel:realName "Nicholas Joseph Fury" ;
+                 marvel:isSpecies marvel:human ;
+                 marvel:Character "Nick Fury" ;
+                 marvel:hasGender "Male" ;
+                 marvel:playsARoleIn marvel:IronMan,
+                                     marvel:TheIncredibleHulk,
+                                     marvel:IronMan2,
+                                     marvel:Thor_Movie,
+                                     marvel:CaptainAmericaTheFirstAvenger,
+                                     marvel:TheAvengers,
+                                     marvel:CaptainAmericaTheWinterSoldier,
+                                     marvel:AvengersAgeofUltron,
+                                     marvel:AvengersInfinityWar,
+                                     marvel:CaptainMarvel,
+                                     marvel:AvengersEndgame,
+                                     marvel:SpiderManFarFromHome .
+
+
+###  http://example.com/marvel_ontology#/Odin_Allfather
+marvel:Odin_Allfather rdf:type owl:NamedIndividual ,
+                               marvel:Hero ;
+
+                      marvel:hasCitizenship marvel:Asgardian ;
+                      marvel:hasStatus "Deceased" ;
+                      marvel:Affiliation "Asgardian Royal Family" ;
+                      marvel:isPortrayedBy marvel:Anthony_Hopkins ;
+                      marvel:Rank "Prince of Asgard (formerly)King of Asgard (formerly)God of War and Wisdom" ;
+                      marvel:realName "Odin Borson" ;
+                      marvel:isSpecies marvel:Asgardian ;
+                      marvel:Character "Odin Allfather" ;
+                      marvel:hasGender "Male" ;
+                      marvel:playsARoleIn marvel:Thor_Movie,
+                                          marvel:CaptainAmericaTheFirstAvenger,
+                                          marvel:TheAvengers,
+                                          marvel:ThorTheDarkWorld,
+                                          marvel:AvengersAgeofUltron,
+                                          marvel:DoctorStrange,
+                                          marvel:SpiderManHomecoming,
+                                          marvel:ThorRagnarok,
+                                          marvel:AvengersInfinityWar,
+                                          marvel:AvengersEndgame .
+
+
+###  http://example.com/marvel_ontology#/Peggy_Carter
+marvel:Peggy_Carter rdf:type owl:NamedIndividual ,
+                             marvel:Hero ;
+
+                    marvel:hasCitizenship marvel:British ;
+                    marvel:hasStatus "Deceased" ;
+                    marvel:Affiliation "Stark Industries" ;
+                    marvel:isPortrayedBy marvel:Gwyneth_Paltrow ;
+                    marvel:Rank "CEO of Stark Industries" ;
+                    marvel:realName "Virginia Potts" ;
+                    marvel:isSpecies marvel:human ;
+                    marvel:Character "Pepper Potts" ;
+                    marvel:hasGender "Female" ;
+                    marvel:playsARoleIn marvel:CaptainAmericaTheFirstAvenger,
+                                        marvel:TheAvengers,
+                                        marvel:CaptainAmericaTheWinterSoldier,
+                                        marvel:AvengersAgeofUltron,
+                                        marvel:AntMan,
+                                        marvel:CaptainAmericaCivilWar,
+                                        marvel:AvengersEndgame,
+                                        marvel:IronMan,
+                                        marvel:IronMan2,
+                                        marvel:TheAvengers,
+                                        marvel:IronMan3,
+                                        marvel:AvengersAgeofUltron,
+                                        marvel:CaptainAmericaCivilWar,
+                                        marvel:SpiderManHomecoming,
+                                        marvel:AvengersInfinityWar,
+                                        marvel:AvengersEndgame,
+                                        marvel:SpiderManFarFromHome .
+
+
+###  http://example.com/marvel_ontology#/Phil_Coulson
+marvel:Phil_Coulson rdf:type owl:NamedIndividual ,
+                             marvel:Hero ;
+
+                    marvel:hasCitizenship marvel:American ;
+                    marvel:hasStatus "Deceased" ;
+                    marvel:Affiliation "S.H.I.E.L.D. (formerly)*Project T.A.H.I.T.I. (formerly)*Coulson's Team (formerly)*Theta Protocol (formerly) ATCU (formerly)Framework*Alexander Pierce High School (formerly)* S.H.I.E.L.D. (formerly)" ;
+                    marvel:isPortrayedBy marvel:Clark_Gregg ;
+                    marvel:Rank "Agent of S.H.I.E.L.D. (formerly)Director of S.H.I.E.L.D. (formerly)Agent of S.H.I.E.L.D. (Framework; formerly)" ;
+                    marvel:realName "Phillip J. Coulson" ;
+                    marvel:isSpecies marvel:cyborg ;
+                    marvel:Character "Phil Coulson" ;
+                    marvel:hasGender "Male" ;
+                    marvel:playsARoleIn marvel:IronMan,
+                                        marvel:IronMan2,
+                                        marvel:Thor_Movie,
+                                        marvel:TheAvengers,
+                                        marvel:AvengersAgeofUltron,
+                                        marvel:CaptainMarvel .
+
+
+
+
+
+
+###  http://example.com/marvel_ontology#/Quicksilver
+marvel:Quicksilver rdf:type owl:NamedIndividual ,
+                            marvel:Hero ;
+
+                   marvel:hasCitizenship marvel:Sokovian ;
+                   marvel:hasStatus "Deceased" ;
+                   marvel:Affiliation "HYDRA (formerly) Avengers" ;
+                   marvel:isPortrayedBy marvel:Aaron_TaylorJohnson ;
+                   marvel:realName "Pietro Maximoff" ;
+                   marvel:isSpecies marvel:human ;
+                   marvel:Character "Quicksilver" ;
+                   marvel:hasGender "Male" ;
+                   marvel:playsARoleIn marvel:CaptainAmericaTheWinterSoldier,
+                                       marvel:AvengersAgeofUltron,
+                                       marvel:CaptainAmericaCivilWar .
+
+
+###  http://example.com/marvel_ontology#/Rhodey
+marvel:Rhodey rdf:type owl:NamedIndividual ,
+                       marvel:Hero ;
+
+              marvel:hasCitizenship marvel:American ;
+              marvel:hasStatus "Alive" ;
+              marvel:Affiliation "MIT (formerly) United States Air Force Stark Industries (liaison) Avengers (formerly)" ;
+              marvel:isPortrayedBy marvel:Terrence_Howard ;
+              marvel:Rank "Colonel, Lieutenant Colonel (formerly)USAF Weapons Procurement Liaison (formerly)" ;
+              marvel:realName "James Rupert Rhodes" ;
+              marvel:isSpecies marvel:human ;
+              marvel:Character "Rhodey" ;
+              marvel:hasGender "Male" ;
+              marvel:playsARoleIn marvel:IronMan,
+                                  marvel:IronMan2,
+                                  marvel:IronMan3,
+                                  marvel:AvengersAgeofUltron,
+                                  marvel:CaptainAmericaCivilWar,
+                                  marvel:SpiderManHomecoming,
+                                  marvel:AvengersInfinityWar,
+                                  marvel:CaptainMarvel,
+                                  marvel:AvengersEndgame,
+                                  marvel:SpiderManFarFromHome.
+
+
+###  http://example.com/marvel_ontology#/Robin_Hood
+marvel:Robin_Hood rdf:type owl:NamedIndividual ,
+                           marvel:Hero ;
+
+                  marvel:hasCitizenship marvel:Asgardian ;
+                  marvel:hasStatus "Deceased" ;
+                  marvel:Affiliation "Warriors Three" ;
+                  marvel:isPortrayedBy marvel:Zachary_Levi ;
+                  marvel:realName "Fandral" ;
+                  marvel:isSpecies marvel:Asgardian ;
+                  marvel:Character "Robin Hood" ;
+                  marvel:hasGender "Male" ;
+                  marvel:playsARoleIn marvel:Thor_Movie,
+                                      marvel:ThorTheDarkWorld,
+                                      marvel:ThorRagnarok .
+
+
+###  http://example.com/marvel_ontology#/Rocket
+marvel:Rocket rdf:type owl:NamedIndividual ,
+                       marvel:Hero ;
+
+              marvel:hasStatus "Alive" ;
+              marvel:Affiliation "Guardians of the Galaxy Avengers (formerly)" ;
+              marvel:isPortrayedBy marvel:Sean_Gunn ;
+              marvel:realName "89P13" ;
+              marvel:isSpecies marvel:Halfworlder ;
+              marvel:Character "Rocket" ;
+              marvel:hasGender "Male" ;
+              marvel:playsARoleIn marvel:GuardiansOfTheGalaxy,
+                                  marvel:GuardiansOfTheGalaxyVol2,
+                                  marvel:AvengersInfinityWar,
+                                  marvel:AvengersEndgame,
+                                  marvel:GuardiansOfTheGalaxyVol3  .
+
+
+###  http://example.com/marvel_ontology#/Scarlet_Witch
+marvel:Scarlet_Witch rdf:type owl:NamedIndividual ,
+                              marvel:Hero ;
+
+                     marvel:hasCitizenship marvel:Sokovian ;
+                     marvel:hasStatus "Alive" ;
+                     marvel:Affiliation "HYDRA (formerly) Avengers (formerly)" ;
+                     marvel:isPortrayedBy marvel:Elizabeth_Olsen ;
+                     marvel:realName "Wanda Maximoff" ;
+                     marvel:isSpecies marvel:human ;
+                     marvel:Character "Scarlet Witch" ;
+                     marvel:hasGender "Female" ;
+                     marvel:playsARoleIn marvel:CaptainAmericaTheWinterSoldier,
+                                         marvel:AvengersAgeofUltron,
+                                         marvel:CaptainAmericaCivilWar,
+                                         marvel:AvengersInfinityWar,
+                                         marvel:AvengersEndgame,
+                                         marvel:SpiderManFarFromHome .
+
+
+
+###  http://example.com/marvel_ontology#/Soh-larr
+marvel:Soh-larr rdf:type owl:NamedIndividual ,
+                         marvel:Hero ;
+
+
+                marvel:hasStatus "Alive" ;
+                marvel:Affiliation "S.H.I.E.L.D. (formerly; undercover)Nick Fury's Crew (formerly)" ;
+                marvel:isPortrayedBy marvel:Ben_Mendelsohn ;
+                marvel:Rank "General, Director of S.H.I.E.L.D. (formerly; undercover)" ;
+                marvel:realName "Talos" ;
+                marvel:isSpecies marvel:Skrull ;
+                marvel:Character "Soh-larr" ;
+                marvel:hasGender "Male" ;
+                marvel:playsARoleIn marvel:CaptainMarvel,
+                                    marvel:SpiderManFarFromHome .
+
+
+###  http://example.com/marvel_ontology#/Spider-Man
+marvel:Spider-Man rdf:type owl:NamedIndividual ,
+                           marvel:Hero ;
+
+                  marvel:hasCitizenship marvel:American ;
+                  marvel:hasStatus "Alive" ;
+                  marvel:Affiliation "Midtown School of Science and Technology Stark Industries (formerly) Avengers (formerly)" ;
+                  marvel:isPortrayedBy marvel:Tom_Holland ;
+                  marvel:realName "Peter Benjamin Parker" ;
+                  marvel:isSpecies marvel:human ;
+                  marvel:Character "Spider-man" ;
+                  marvel:hasGender "Male" ;
+                  marvel:playsARoleIn marvel:IronMan2,
+                                      marvel:AntMan,
+                                      marvel:CaptainAmericaCivilWar,
+                                      marvel:SpiderManHomecoming,
+                                      marvel:AvengersInfinityWar,
+                                      marvel:AvengersEndgame,
+                                      marvel:SpiderManFarFromHome.
+
+
+###  http://example.com/marvel_ontology#/Star-lord
+marvel:Star-lord rdf:type owl:NamedIndividual ,
+                          marvel:Hero ;
+
+                 marvel:hasCitizenship marvel:American ;
+                 marvel:hasStatus "Alive" ;
+                 marvel:Affiliation "Ravagers (formerly)* Yondu Ravager Clan (formerly) Guardians of the Galaxy" ;
+                 marvel:isPortrayedBy marvel:Chris_Pratt ;
+                 marvel:realName "Peter Jason Quill" ;
+                 marvel:isSpecies marvel:human ;
+                 marvel:Character "Star-lord" ;
+                 marvel:hasGender "Male" ;
+                 marvel:playsARoleIn marvel:GuardiansOfTheGalaxy,
+                                     marvel:GuardiansOfTheGalaxyVol2,
+                                     marvel:AvengersInfinityWar,
+                                     marvel:AvengersEndgame,
+                                     marvel:GuardiansOfTheGalaxyVol3 .
+
+
+
+
+
+
+
+
+###  http://example.com/marvel_ontology#/The_Incredible_Hulk
+marvel:The_Incredible_Hulk rdf:type owl:NamedIndividual ,
+                                    marvel:Hero ;
+
+                           marvel:hasCitizenship marvel:American ;
+                           marvel:hasStatus "Alive" ;
+                           marvel:Affiliation "Harvard University (formerly) Culver University (formerly)Pingo Doce Bottling Plant (formerly) Avengers (formerly)Revengers (formerly)" ;
+                           marvel:isPortrayedBy marvel:Mark_Ruffalo ;
+                           marvel:Rank "Doctor, Champion" ;
+                           marvel:realName "Robert Bruce Banner[1]" ;
+                           marvel:isSpecies marvel:human ;
+                           marvel:Character "The Incredible Hulk" ;
+                           marvel:hasGender "Male" ;
+                           marvel:playsARoleIn marvel:TheIncredibleHulk,
+                                               marvel:Thor_Movie,
+                                               marvel:TheAvengers,
+                                               marvel:IronMan3,
+                                               marvel:CaptainAmericaTheWinterSoldier,
+                                               marvel:AvengersAgeofUltron,
+                                               marvel:CaptainAmericaCivilWar,
+                                               marvel:SpiderManHomecoming,
+                                               marvel:ThorRagnarok,
+                                               marvel:AvengersInfinityWar,
+                                               marvel:CaptainMarvel,
+                                               marvel:AvengersEndgame .
+
+
+###  http://example.com/marvel_ontology#/The_Living_Planet
+marvel:The_Living_Planet rdf:type owl:NamedIndividual ,
+                                  marvel:Villain ;
+
+
+                         marvel:hasStatus "Deceased" ;
+                         marvel:isPortrayedBy marvel:Kurt_Russell ;
+                         marvel:realName "Ego" ;
+                         marvel:isSpecies marvel:celestial ;
+                         marvel:Character "The Living Planet" ;
+                         marvel:hasGender "Male" ;
+                         marvel:playsARoleIn marvel:GuardiansOfTheGalaxy,
+                                             marvel:GuardiansOfTheGalaxyVol2,
+                                             marvel:AvengersInfinityWar .
+
+
+###  http://example.com/marvel_ontology#/The_Mortal
+marvel:The_Mortal rdf:type owl:NamedIndividual ,
+                           marvel:Hero ;
+
+                  marvel:hasCitizenship marvel:American ;
+                  marvel:hasStatus "Alive" ;
+                  marvel:Affiliation "Culver University" ;
+                  marvel:isPortrayedBy marvel:Natalie_Portman ;
+                  marvel:Rank "Doctor" ;
+                  marvel:realName "Jane Foster" ;
+                  marvel:isSpecies marvel:human ;
+                  marvel:Character "The Mortal" ;
+                  marvel:hasGender "Female" ;
+                  marvel:playsARoleIn marvel:Thor_Movie,
+                                      marvel:TheAvengers,
+                                      marvel:ThorTheDarkWorld,
+                                      marvel:AvengersAgeofUltron,
+                                      marvel:ThorRagnarok,
+                                      marvel:AvengersEndgame.
+
+
+###  http://example.com/marvel_ontology#/Thor
+marvel:Thor rdf:type owl:NamedIndividual ,
+                     marvel:Hero ;
+
+            marvel:hasCitizenship marvel:Asgardian ;
+            marvel:hasStatus "Alive" ;
+            marvel:Affiliation "Asgardian Royal Family (formerly) Avengers (formerly)Revengers (formerly) Guardians of the Galaxy" ;
+            marvel:isPortrayedBy marvel:Chris_Hemsworth ;
+            marvel:Rank "God of Thunder, Prince of Asgard (formerly)King of Asgard (formerly)King of New Asgard (formerly)" ;
+            marvel:realName "Thor Odinson" ;
+            marvel:isSpecies marvel:Asgardian ;
+            marvel:Character "Thor" ;
+            marvel:hasGender "Male" ;
+            marvel:playsARoleIn marvel:Thor_Movie,
+                                marvel:CaptainAmericaTheFirstAvenger,
+                                marvel:TheAvengers,
+                                marvel:IronMan3,
+                                marvel:ThorTheDarkWorld,
+                                marvel:AvengersAgeofUltron,
+                                marvel:CaptainAmericaCivilWar,
+                                marvel:DoctorStrange,
+                                marvel:SpiderManHomecoming,
+                                marvel:ThorRagnarok,
+                                marvel:AvengersInfinityWar,
+                                marvel:AvengersEndgame,
+                                marvel:SpiderManFarFromHome.
+
+
+
+
+
+###  http://example.com/marvel_ontology#/Top_Brass
+marvel:Top_Brass rdf:type owl:NamedIndividual ,
+                          marvel:Villain ;
+
+                 marvel:hasCitizenship marvel:American ;
+                 marvel:hasStatus "Deceased" ;
+                 marvel:Affiliation "S.H.I.E.L.D. (undercover) HYDRA*HYDRA Preparatory Academy (formerly)" ;
+                 marvel:isPortrayedBy marvel:Maximiliano_Hernández ;
+                 marvel:Rank "Agent of S.H.I.E.L.D." ;
+                 marvel:realName "Jasper Sitwell" ;
+                 marvel:isSpecies marvel:human ;
+                 marvel:Character "Top Brass" ;
+                 marvel:hasGender "Male" ;
+                 marvel:playsARoleIn marvel:Thor_Movie,
+                                     marvel:TheAvengers,
+                                     marvel:CaptainAmericaTheWinterSoldier,
+                                     marvel:AvengersEndgame .
+
+
+###  http://example.com/marvel_ontology#/Valkyrie
+marvel:Valkyrie rdf:type owl:NamedIndividual ,
+                         marvel:Hero ;
+
+                marvel:hasCitizenship marvel:Asgardian ;
+                marvel:hasStatus "Alive" ;
+                marvel:Affiliation "Valkyrie (formerly)Revengers (formerly)" ;
+                marvel:isPortrayedBy marvel:Tessa_Thompson ;
+                marvel:Rank "King of New Asgard" ;
+                marvel:realName "Brunnhilde" ;
+                marvel:isSpecies marvel:Asgardian ;
+                marvel:Character "Valkyrie" ;
+                marvel:hasGender "Female" ;
+                marvel:playsARoleIn marvel:ThorRagnarok,
+                                    marvel:AvengersEndgame.
+
+
+###  http://example.com/marvel_ontology#/Vision
+marvel:Vision rdf:type owl:NamedIndividual ,
+                       marvel:Hero ;
+
+              marvel:hasStatus "Destroyed" ;
+              marvel:Affiliation "Avengers" ;
+              marvel:isPortrayedBy marvel:Paul_Bettany ;
+              marvel:realName "J.A.R.V.I.S" ;
+              marvel:isSpecies marvel:Android ;
+              marvel:Character "Vision" ;
+              rdf:type "Male (masculine programming & voice)" ;
+              marvel:playsARoleIn marvel:AvengersAgeofUltron,
+                                  marvel:CaptainAmericaCivilWar,
+                                  marvel:SpiderManHomecoming,
+                                  marvel:AvengersInfinityWar,
+                                  marvel:AvengersEndgame,
+                                  marvel:SpiderManFarFromHome .
+
+
+###  http://example.com/marvel_ontology#/Volstagg_The_Valiant
+marvel:Volstagg_The_Valiant rdf:type owl:NamedIndividual ,
+                                     marvel:Hero ;
+
+                            marvel:hasCitizenship marvel:Asgardian ;
+                            marvel:hasStatus "Deceased" ;
+                            marvel:Affiliation "Warriors Three" ;
+                            marvel:isPortrayedBy marvel:Ray_Stevenson ;
+                            marvel:realName "Volstagg" ;
+                            marvel:isSpecies marvel:Asgardian ;
+                            marvel:Character "Volstagg The Valiant" ;
+                            marvel:hasGender "Male" ;
+                            marvel:playsARoleIn marvel:Thor_Movie,
+                                                marvel:ThorTheDarkWorld,
+                                                marvel:ThorRagnarok .
+
+
+###  http://example.com/marvel_ontology#/Wasp
+marvel:Wasp rdf:type owl:NamedIndividual ,
+                     marvel:Hero ;
+
+            marvel:hasCitizenship marvel:American ;
+            marvel:hasStatus "Alive" ;
+            marvel:Affiliation "Pym Technologies (formerly)" ,
+                               "S.H.I.E.L.D. (formerly)" ;
+            marvel:isPortrayedBy marvel:Michelle_Pfeiffer ;
+            marvel:Rank "Chairwoman of Pym Technologies (formerly)" ;
+            marvel:realName "Hope van Dyne" ,
+                             "Janet van Dyne" ;
+            marvel:isSpecies marvel:human ;
+            marvel:Character "Wasp" ;
+            marvel:hasGender "Female" ;
+            marvel:playsARoleIn marvel:AntMan,
+                                marvel:AntManAndTheWasp,
+                                marvel:AvengersEndgame .
+
+
+###  http://example.com/marvel_ontology#/Winter_Soldier
+marvel:Winter_Soldier rdf:type owl:NamedIndividual ,
+                               marvel:Hero ;
+
+                      marvel:hasCitizenship marvel:American ;
+                      marvel:hasStatus "Alive" ;
+                      marvel:Affiliation "United States Army (formerly)* 107th Infantry Regiment (formerly) Howling Commandos (formerly) HYDRA (formerly)*Winter Soldiers (formerly)" ;
+                      marvel:isPortrayedBy marvel:Sebastian_Stan ;
+                      marvel:Rank "Sergeant (formerly)" ;
+                      marvel:realName "James Buchanan Barnes" ;
+                      marvel:isSpecies marvel:cyborg ;
+                      marvel:Character "Winter Soldier" ;
+                      marvel:hasGender "Male" ;
+                      marvel:playsARoleIn marvel:IronMan2,
+                                          marvel:CaptainAmericaTheFirstAvenger,
+                                          marvel:CaptainAmericaTheWinterSoldier,
+                                          marvel:AvengersAgeofUltron,
+                                          marvel:AntMan,
+                                          marvel:CaptainAmericaCivilWar,
+                                          marvel:SpiderManHomecoming,
+                                          marvel:BlackPanther,
+                                          marvel:AvengersInfinityWar,
+                                          marvel:AvengersEndgame,
+                                          marvel:SpiderManFarFromHome .
+
+
+###  http://example.com/marvel_ontology#/Witch
+marvel:Witch rdf:type owl:NamedIndividual ,
+                      marvel:Hero ;
+
+             marvel:hasCitizenship marvel:Asgardian ;
+             marvel:hasStatus "Deceased" ;
+             marvel:Affiliation "Asgardian Royal Family" ;
+             marvel:isPortrayedBy marvel:Rene_Russo ;
+             marvel:Rank "Queen of Asgard" ;
+             marvel:realName "Frigga" ;
+             marvel:isSpecies marvel:Asgardian ;
+             marvel:Character "Witch" ;
+             marvel:hasGender "Female" ;
+             marvel:playsARoleIn marvel:Thor_Movie, marvel:ThorTheDarkworld, marvel:ThorRagnarok, marvel:AvengersInfinityWar, marvel:AvengersEndgame .
+
+
+###  http://example.com/marvel_ontology#/Xena
+marvel:Xena rdf:type owl:NamedIndividual ,
+                     marvel:Hero ;
+
+            marvel:hasCitizenship marvel:Asgardian ;
+            marvel:hasStatus "Alive" ;
+            marvel:isPortrayedBy marvel:Jaimie_Alexander ;
+            marvel:Rank "Goddess of War" ;
+            marvel:realName "Sif" ;
+            marvel:isSpecies marvel:Asgardian ;
+            marvel:Character "Xena" ;
+            marvel:hasGender "Female" ;
+            marvel:playsARoleIn marvel:Thor_Movie, marvel:ThorTheDarkWorld, marvel:ThorRagnarok .
+
+
+###  http://example.com/marvel_ontology#/Beyonc%C3%A9
+<http://example.com/marvel_ontology#/Beyonc%C3%A9> rdf:type owl:NamedIndividual ,
+                                                            marvel:Hero ;
+
+                                                   marvel:hasCitizenship marvel:Chinese ;
+                                                   marvel:hasStatus "Alive" ;
+                                                   marvel:Affiliation "Masters of the Mystic Arts" ;
+                                                   marvel:isPortrayedBy marvel:Benedict_Wong ;
+                                                   marvel:Rank "Librarian of Kamar-Taj (formerly)Master of the New York Sanctum (formerly)" ;
+                                                   marvel:realName "Wong" ;
+                                                   marvel:isSpecies marvel:human ;
+                                                   marvel:Character "Beyoncé" ;
+                                                   marvel:hasGender "Male" ;
+                                                   marvel:playsARoleIn marvel:DoctorStrange, marvel:AvengersInfinityWar, marvel:AvengersEndgame, marvel:DoctorStrangeintheMultiverseofMadness .
+
+
+###  http://example.com/marvel_ontology#/Frenchie%2C_Prisoner_%2303691
+<http://example.com/marvel_ontology#/Frenchie%2C_Prisoner_%2303691> rdf:type owl:NamedIndividual ,
+                                                                             marvel:Hero ;
+
+                                                                    marvel:hasCitizenship marvel:French ;
+                                                                    marvel:hasStatus "Deceased" ;
+                                                                    marvel:Affiliation "French Resistance Howling Commandos" ;
+                                                                    marvel:isPortrayedBy marvel:Bruno_Ricci ;
+                                                                    marvel:realName "Jacques Dernier" ;
+                                                                    marvel:isSpecies marvel:human ;
+                                                                    marvel:Character "Frenchie, Prisoner #03691" ;
+                                                                    marvel:hasGender "Male" ;
+                                                                    marvel:playsARoleIn marvel:CaptainAmericaTheFirstAvenger, marvel:CaptainAmericaTheWinterSoldier, marvel:Spider-ManHomecoming .
+
+
+###  http://example.com/marvel_ontology#/Limey%2C_Monty%2C_Prisoner_%2349275
+<http://example.com/marvel_ontology#/Limey%2C_Monty%2C_Prisoner_%2349275> rdf:type owl:NamedIndividual ,
+                                                                                   marvel:Hero ;
+
+                                                                          marvel:hasCitizenship marvel:British ;
+                                                                          marvel:hasStatus "Deceased" ;
+                                                                          marvel:Affiliation "British Armed Forces*3rd Independent Parachute Brigade (formerly) Howling Commandos" ;
+                                                                          marvel:isPortrayedBy marvel:JJ_Feild ;
+                                                                          marvel:Rank "Brigadier" ;
+                                                                          marvel:realName "James Montgomery Falsworth" ;
+                                                                          marvel:isSpecies marvel:human ;
+                                                                          marvel:Character "Limey, Monty, Prisoner #49275" ;
+                                                                          marvel:hasGender "Male" ;
+                                                                          marvel:playsARoleIn marvel:CaptainAmericaTheFirstAvenger, marvel:CaptainAmericaTheWinterSoldier, marvel:Spider-ManHomecoming .
+
+
+###  http://example.com/marvel_ontology#/Mama%2C_Auntie
+<http://example.com/marvel_ontology#/Mama%2C_Auntie> rdf:type owl:NamedIndividual ,
+                                                              marvel:Hero ;
+
+                                                     marvel:hasCitizenship marvel:Wakandan ;
+                                                     marvel:hasStatus "Alive" ;
+                                                     marvel:Affiliation "Golden TribeTribal Council" ;
+                                                     marvel:isPortrayedBy marvel:Angela_Bassett ;
+                                                     marvel:Rank "Queen of Wakanda (formerly) Queen Mother" ;
+                                                     marvel:realName "Ramonda" ;
+                                                     marvel:isSpecies marvel:human ;
+                                                     marvel:Character "Mama, Auntie" ;
+                                                     marvel:hasGender "Female" ;
+                                                     marvel:playsARoleIn marvel:BlackPanther, marvel:AvengersEndgame .
+
+
+###  http://example.com/marvel_ontology#/The_Armys_Number_One_Weapons_Contractor
+<http://example.com/marvel_ontology#/The_Army%27s_Number_One_Weapons_Contractor> rdf:type owl:NamedIndividual ,
+                                                                                          marvel:Hero ;
+
+                                                                                 marvel:hasCitizenship marvel:American ;
+                                                                                 marvel:hasStatus "Deceased" ;
+                                                                                 marvel:Affiliation "Stark Industries SSR (formerly)Stark Pictures S.H.I.E.L.D.*Project P.E.G.A.S.U.S." ;
+                                                                                 marvel:isPortrayedBy marvel:Gerard_Sanders ;
+                                                                                 marvel:Rank "CEO of Stark Industries, Founder of S.H.I.E.L.D." ;
+                                                                                 marvel:realName "Howard Anthony Walter Stark" ;
+                                                                                 marvel:isSpecies marvel:human ;
+                                                                                 marvel:Character "The Army's Number One Weapons Contractor" ;
+                                                                                 marvel:hasGender "Male" ;
+                                                                                 marvel:playsARoleIn marvel:IronMan, marvel:IronMan2, marvel:CaptainAmericaTheFirstAvenger, marvel:TheAvengers, marvel:CaptainAmericaTheWinterSoldier, marvel:AvengersAgeofUltron, marvel:AntMan, marvel:CaptainAmericaCivilWar, marvel:SpiderManHomecoming, marvel:AvengersEndgame .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

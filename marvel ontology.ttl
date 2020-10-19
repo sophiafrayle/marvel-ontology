@@ -1,0 +1,383 @@
+@prefix : <http://example.com/marvel_ontology#> .
+@prefix w3: <http://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix movie: <http://www.movieontology.org/2009/10/01/movieontology.owl#> .
+@prefix marvel: <http://example.com/marvel_ontology#> .
+@base <http://example.com/marvel_ontology#> .
+
+<http://example.com/marvel_ontology#> rdf:type owl:Ontology ;
+                                       owl:imports <file:/C:/Users/thijz/Desktop/external%20data/FINISHED%20ontology/external%20database%20Character.owl> ,
+                                                   <http://www.movieontology.org/2009/11/09/movieontology.owl> ,
+                                                   <http://xmlns.com/foaf/0.1/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+rdf:type rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.com/marvel_ontology#IsGenreOf
+marvel:IsGenreOf rdf:type owl:ObjectProperty ;
+                 owl:equivalentProperty movie:isGenreOf ;
+                 owl:inverseOf marvel:hasGenre .
+
+
+###  http://example.com/marvel_ontology#Portrays
+marvel:Portrays rdf:type owl:ObjectProperty ;
+                owl:inverseOf marvel:isPortrayedBy .
+
+
+###  http://example.com/marvel_ontology#hasActor
+marvel:hasActor rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty movie:hasActor ;
+                owl:inverseOf marvel:isActorIn .
+
+
+###  http://example.com/marvel_ontology#hasCharacter
+marvel:hasCharacter rdf:type owl:ObjectProperty ;
+                    owl:inverseOf marvel:playsARoleIn .
+
+
+###  http://example.com/marvel_ontology#hasCitizenship
+marvel:hasCitizenship rdf:type owl:ObjectProperty .
+
+
+###  http://example.com/marvel_ontology#hasDirector
+marvel:hasDirector rdf:type owl:ObjectProperty ;
+                   owl:equivalentProperty movie:hasDirector ;
+                   owl:inverseOf marvel:isDirectorOf .
+
+
+###  http://example.com/marvel_ontology#hasGenre
+marvel:hasGenre rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty movie:belongsToGenre .
+
+
+###  http://example.com/marvel_ontology#hasProducer
+marvel:hasProducer rdf:type owl:ObjectProperty ;
+                   owl:equivalentProperty movie:hasProducer .
+
+
+###  http://example.com/marvel_ontology#isActorIn
+marvel:isActorIn rdf:type owl:ObjectProperty ;
+                 owl:equivalentProperty movie:isActorIn .
+
+
+###  http://example.com/marvel_ontology#isAwardOf
+marvel:isAwardOf rdf:type owl:ObjectProperty ;
+                 owl:inverseOf marvel:wonAward .
+
+
+###  http://example.com/marvel_ontology#isDirectorOf
+marvel:isDirectorOf rdf:type owl:ObjectProperty ;
+                    owl:equivalentProperty movie:isDirectorOf .
+
+
+###  http://example.com/marvel_ontology#isFrom
+marvel:isFrom rdf:type owl:ObjectProperty .
+
+
+###  http://example.com/marvel_ontology#isPortrayedBy
+marvel:isPortrayedBy rdf:type owl:ObjectProperty .
+
+
+###  http://example.com/marvel_ontology#isSpecies
+marvel:isSpecies rdf:type owl:ObjectProperty .
+
+
+###  http://example.com/marvel_ontology#playsARoleIn
+marvel:playsARoleIn rdf:type owl:ObjectProperty .
+
+
+###  http://example.com/marvel_ontology#produced
+marvel:produced rdf:type owl:ObjectProperty .
+
+
+###  http://example.com/marvel_ontology#wonAward
+marvel:wonAward rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty movie:isAwardedWith .
+
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#belongsToGenre
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#hasActor
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#hasDirector
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#hasProducer
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#isActorIn
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#isAwardedWith
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#isDirectorOf
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#isGenreOf
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.com/marvel_ontology#Affiliation
+marvel:Affiliation rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#Character
+marvel:Character rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#Rank
+marvel:Rank rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#hasAlias
+marvel:hasAlias rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#hasCategory
+marvel:hasCategory rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#hasCitizenship
+marvel:hasCitizenship rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#hasGender
+marvel:hasGender rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#hasIMDBlink
+marvel:hasIMDBlink rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#hasLanguage
+marvel:hasLanguage rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#hasMovieRating
+marvel:hasMovieRating rdf:type owl:DatatypeProperty ;
+                      owl:equivalentProperty movie:imdbrating .
+
+
+###  http://example.com/marvel_ontology#hasMovieRuntime
+marvel:hasMovieRuntime rdf:type owl:DatatypeProperty ;
+                       owl:equivalentProperty movie:runtime .
+
+
+###  http://example.com/marvel_ontology#hasPlot
+marvel:hasPlot rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#hasRealName
+marvel:hasRealName rdf:type owl:DatatypeProperty ;
+                   owl:equivalentProperty <http://xmlns.com/foaf/0.1/name> .
+
+
+###  http://example.com/marvel_ontology#hasReleaseDate
+marvel:hasReleaseDate rdf:type owl:DatatypeProperty ;
+                      owl:equivalentProperty movie:releasedate .
+
+
+###  http://example.com/marvel_ontology#hasReviewRating
+marvel:hasReviewRating rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#hasStatus
+marvel:hasStatus rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#hasTitle
+marvel:hasTitle rdf:type owl:DatatypeProperty ;
+                owl:equivalentProperty movie:title .
+
+
+###  http://example.com/marvel_ontology#isSpecies
+marvel:isSpecies rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#playsARoleIn
+marvel:playsARoleIn rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#realName
+marvel:realName rdf:type owl:DatatypeProperty .
+
+
+###  http://example.com/marvel_ontology#worksFor
+marvel:worksFor rdf:type owl:DatatypeProperty .
+
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#imdbrating
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#releasedate
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#runtime
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#title
+
+###  http://xmlns.com/foaf/0.1/name
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/ontology/Person
+<http://dbpedia.org/ontology/Person> rdf:type owl:Class ;
+                                     owl:equivalentClass marvel:Person .
+
+
+###  http://example.com/marvel_ontology#Actor
+marvel:Actor rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty marvel:Portrays ;
+                                   owl:someValuesFrom marvel:Character
+                                 ] ;
+             rdfs:subClassOf marvel:Person .
+
+
+###  http://example.com/marvel_ontology#AliveCharacter
+marvel:AliveCharacter rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty marvel:hasStatus ;
+                                            owl:hasValue "Alive"
+                                          ] ;
+                      rdfs:subClassOf marvel:Character .
+
+
+###  http://example.com/marvel_ontology#Award
+marvel:Award rdf:type owl:Class ;
+             owl:equivalentClass movie:Award .
+
+
+###  http://example.com/marvel_ontology#Character
+marvel:Character rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty marvel:isPortrayedBy ;
+                                       owl:someValuesFrom marvel:Actor
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty marvel:playsARoleIn ;
+                                       owl:someValuesFrom marvel:Movie
+                                     ] .
+
+
+###  http://example.com/marvel_ontology#Cinematography
+marvel:Cinematography rdf:type owl:Class .
+
+
+###  http://example.com/marvel_ontology#Citizenship
+marvel:Citizenship rdf:type owl:Class .
+
+
+###  http://example.com/marvel_ontology#Country
+marvel:Country rdf:type owl:Class .
+
+
+###  http://example.com/marvel_ontology#DeadCharacter
+marvel:DeadCharacter rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty marvel:hasStatus ;
+                                           owl:hasValue "Deceased"
+                                         ] ;
+                     rdfs:subClassOf marvel:Character .
+
+
+###  http://example.com/marvel_ontology#Director
+marvel:Director rdf:type owl:Class ;
+                rdfs:subClassOf marvel:Person .
+
+
+###  http://example.com/marvel_ontology#Female
+marvel:Female rdf:type owl:Class .
+
+
+###  http://example.com/marvel_ontology#FemaleActor
+marvel:FemaleActor rdf:type owl:Class ;
+                   rdfs:subClassOf marvel:Actor .
+
+
+###  http://example.com/marvel_ontology#FemaleCharacter
+marvel:FemaleCharacter rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty marvel:hasGender ;
+                                             owl:hasValue "Female"
+                                           ] ;
+                       rdfs:subClassOf marvel:Character .
+
+
+###  http://example.com/marvel_ontology#Genre
+marvel:Genre rdf:type owl:Class ;
+             owl:equivalentClass movie:Genre .
+
+
+###  http://example.com/marvel_ontology#Hero
+marvel:Hero rdf:type owl:Class ;
+            rdfs:subClassOf marvel:Character .
+
+
+###  http://example.com/marvel_ontology#Male
+marvel:Male rdf:type owl:Class .
+
+
+###  http://example.com/marvel_ontology#MaleActor
+marvel:MaleActor rdf:type owl:Class ;
+                 rdfs:subClassOf marvel:Actor .
+
+
+###  http://example.com/marvel_ontology#MaleCharacter
+marvel:MaleCharacter rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty marvel:hasGender ;
+                                           owl:hasValue "Male"
+                                         ] ;
+                     rdfs:subClassOf marvel:Character .
+
+
+###  http://example.com/marvel_ontology#Movie
+marvel:Movie rdf:type owl:Class ;
+             owl:equivalentClass <http://www.movieontology.org/2009/11/09/Movie> ;
+             rdfs:subClassOf marvel:Cinematography .
+
+
+###  http://example.com/marvel_ontology#Person
+marvel:Person rdf:type owl:Class ;
+              owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://example.com/marvel_ontology#Producer
+marvel:Producer rdf:type owl:Class ;
+                rdfs:subClassOf marvel:Person .
+
+
+###  http://example.com/marvel_ontology#Species
+marvel:Species rdf:type owl:Class .
+
+
+###  http://example.com/marvel_ontology#Villain
+marvel:Villain rdf:type owl:Class ;
+               rdfs:subClassOf marvel:Character .
+
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#Award
+movie:Award rdf:type owl:Class .
+
+
+###  http://www.movieontology.org/2009/10/01/movieontology.owl#Genre
+movie:Genre rdf:type owl:Class .
+
+
+###  http://www.movieontology.org/2009/11/09/Movie
+
+###  http://xmlns.com/foaf/0.1/Person
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
