@@ -73,3 +73,5 @@ This project was created as part of the Bachelor of Science in Artificial Intell
 
 For any queries or contributions, please contact the developers via GitHub. Enjoy exploring the Marvel Universe!
 Note: This project is for educational purposes only and is not affiliated with Marvel or its subsidiaries. All Marvel characters and related content are the property of Marvel Entertainment, LLC.
+
+![Signature](https://github.com/sophiafrayle/EDA-Covid/blob/main/images/Sophia%20Frayle.png)
